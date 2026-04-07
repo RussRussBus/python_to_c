@@ -248,7 +248,7 @@ int main() {...}
 
 If you don't want a function to return anything, you can have it return void.
 
-```
+```c
 void function() {...}
 ```
 
@@ -256,7 +256,7 @@ So what happens if you want a function to return multiple values? For example,
 let's say you have a `stats()` function that should return the min, max, mean,
 median, etc. How do you get the individual values? Simple: return a struct.
 
-```
+```c
 s = stats(values);
 s.max
 s.mean
@@ -296,7 +296,7 @@ By convention, global variables should start with a capital letter. If you want
 to make a variable a constant, use the `const` keyword. By convention, it
 should also be in all capitals.
 
-```
+```c
 int GlobalVariable = 3;        // can be changed
 const int GLOBAL_CONSTANT = 5; // cannot be changed
 
@@ -309,7 +309,7 @@ If you're worried about polluting the global namespace with your variables and
 functions (and you should be), you can make these private to a specific file
 with the keywords `static`.
 
-```
+```c
 static int Mine; // variable private to the file
 static int also_mine() {} // function private to the file
 int main() ...
@@ -327,7 +327,7 @@ elements. Later you decide that it should be 200. Do you want to go to all
 places in your code that had 100 and change them to 200? No, instead you can
 use a macro.
 
-```
+```c
 #define ARRAYSIZE 100
 
 int array[ARRAYSIZE]
@@ -413,7 +413,7 @@ How does Python (and many other modern languages) manage memory? That is, how
 does Python make sure that some variables get cleaned up and others do not?
 Consider the following two Python functions.
 
-```pythone
+```python
 def f1:
 	a = "hello";
 
@@ -534,7 +534,7 @@ done from the stack. Instead, you have to create an array from the heap. It's
 surprisingly easy. All you have to do is as `malloc()` to give you the correct
 amount of memory.
 
-```
+```c
 int *h1 = malloc(5 * sizeof(int));
 ```
 
@@ -555,14 +555,14 @@ free(h1); // eventually
 It's not so simple when you get to 2 dimensions. Again, let's see the stack
 implementation first.
 
-```
+```c
 int s2[4][3];
 ```
 
 To make a 2D array on the heap, you first have to allocate an array of
 pointers, and then allocate an array of values for each of the pointers.
 
-```
+```c
 int **h2 = malloc(4 * sizeof(int*)); // first dimension
 for (int i = 0; i < 4; i++) {
 	h2[i] = malloc(3 * sizeof(int)); // second dimension
@@ -676,7 +676,7 @@ while ((opt = getopt(argc, argv, "w:t:nh")) != -1) {
 Once the named parameters are parsed, the reamining positional parameters can
 be harvested from the command line.
 
-```
+```c
 // positional arguments
 for (int i = optind; i < argc; i++) {
 	printf("positional: %s\n", argv[i]);
@@ -690,7 +690,7 @@ yourself. Take a look at the `cli.c` program.
 
 Previously, we've included header files into our programs like so:
 
-```
+```c
 #include <stdio.h>
 ```
 
@@ -829,14 +829,14 @@ At the top of a Makefile we put some definitions. CFLAGS is whatever extra
 instructions we want to send to the compiler. For example, let's turn on as
 many warnings as possible and make all warnings into errors.
 
-```
+```make
 CFLAGS = -Wall -Werror
 OBJECTS = biosequence.o
 ```
 
 In this section, we also define the name of our program and object file.
 
-```
+```make
 APP = demo
 OBJ = demo.o
 ```
@@ -848,7 +848,7 @@ build more than one application at a time.
 
 The `CC` variable is predefined. It's your C compiler (usually gcc).
 
-```
+```make
 default:
 	make $(APP)
 
@@ -863,7 +863,7 @@ The last section of a Makefile is the inference rules. This allows you to
 compile every .c file into a .o file instead of specifiying every file
 individually.
 
-```
+```make
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 ```
