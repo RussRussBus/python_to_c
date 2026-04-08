@@ -127,7 +127,7 @@ Note that this program added a couple new things. First off there was the
 
 Possibly the most important part of this program is to note that variables a,
 b, and c were never given any value. There is no `None` type in C. When the
-program runs, all variables have a value. Varibles in C are just raw memory
+program runs, all variables have a value. Variables in C are just raw memory
 locations. When you declare a variable, you're getting whatever cruft was left
 in memory at that location from some earlier point in time. Each time you run
 your program, you may have a different value!
@@ -182,7 +182,7 @@ Ideally, your code shouldn't produce any warnings, ever. However, not all
 compilers generate the same warnings. So sometimes you have to compile on
 multiple platforms to find your warnings and errors. Having to compile your
 code everywhere is a pain. This was largely solved by Java, which you only had
-to compile once. However, since evey Java interpreter was different, it spawned
+to compile once. However, since every Java interpreter was different, it spawned
 the phrase "compile once, debug everywhere". It amounts to the same thing:
 developing on multiple platforms makes software more robust.
 
@@ -276,7 +276,7 @@ mini language. You've already seen one preprocessor command before.
 #include <stdio.h>
 ```
 
-Statemets that begin with a # sign are read by the preprocessor. An `#include`
+Statements that begin with a # sign are read by the preprocessor. An `#include`
 statement says "open up the file and copy its entire contents here". What if
 different files define the same function name? In Python, each file has its own
 namespace. For example, you might do `some_library.sum()`, and this would not
@@ -382,7 +382,7 @@ as you leave the function.
 
 There is another part of memory called the _heap_ and it is not a first-in
 last-out queue. It works like the filesystem on your hard disk. When you create
-files, they take up room permanently until you personally destory them. This
+files, they take up room permanently until you personally destroy them. This
 next function allocates memory from the heap.
 
 ```c
@@ -422,7 +422,7 @@ def f2:
 	return "hello";
 ```
 
-Now let's imagine running these in an infinte loop.
+Now let's imagine running these in an infinite loop.
 
 ```python
 while True:
@@ -673,7 +673,7 @@ while ((opt = getopt(argc, argv, "w:t:nh")) != -1) {
 }
 ```
 
-Once the named parameters are parsed, the reamining positional parameters can
+Once the named parameters are parsed, the remaining positional parameters can
 be harvested from the command line.
 
 ```c
@@ -860,7 +860,7 @@ clean:
 ```
 
 The last section of a Makefile is the inference rules. This allows you to
-compile every .c file into a .o file instead of specifiying every file
+compile every .c file into a .o file instead of specifying every file
 individually.
 
 ```make
