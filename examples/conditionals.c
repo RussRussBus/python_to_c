@@ -61,7 +61,7 @@ int main() {
 	*/
 	
 	// the ternary operator is a one-line if-else
-	a = 1;
+	a = 2;
 	printf("is a 1? %s\n", a == 1 ? "yes" : "no");
 	
 	// switch-case
@@ -98,6 +98,6 @@ int main() {
 	printf("this is never executed\n");
 	
 	THE_END: {printf("and so it is\n");}	
-
+	
 }
 

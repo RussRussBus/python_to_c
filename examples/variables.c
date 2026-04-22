@@ -6,6 +6,8 @@ int main() {
 	int b, c;  // declaring multiple variables of the same type
 	int d = 0; // declarating and assigning at the same time
 	printf("%d %d %d %d\n", a, b, c, d); // %d for digit
+	int e = 1, f = 2;
+	printf("%d %d\n", e, f);
 
 	// char is a character and also an 8-bit integer
 	char nt = 'A'; // single characters are in single quotes
@@ -18,6 +20,8 @@ int main() {
 	unsigned short i4; // 0 to 65536
 	long i5;           // depends, see limits.h
 	unsigned long i6;  // depends, see limits.h
+	char x = 127;
+	printf("%d\n", x);
 
 	// there are two common flavors of floats
 	float f1 = M_PI;       // 1.2e-38 to 3.4e+38
