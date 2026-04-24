@@ -4,8 +4,10 @@ int main() {
 	// creating an array is simple
 	// set the size in []
 	// set the values in {}
-	int val[5] = {0, -1, 2, 7, -3};
+	char val[5] = {0, -1, 2, 7, -3};
 	printf("value at index 3: %d\n", val[3]);
+	printf("%d\n", (int)sizeof(val));
+	for(int i = 0; i < (int)sizeof(val); i++) printf("i: %d, %d\n", i, val[i]);
 	
 	// there is nothing to prevent you from doing something idiotic
 	int bad[5] = {0, 1};

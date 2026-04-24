@@ -92,12 +92,13 @@ int main() {
 		printf("this is weird %d\n", c);
 		c++;
 	}
+	printf("we are here\n");
 	if (c < 2) goto WTF;
 	else       goto THE_END;
 	
 	printf("this is never executed\n");
 	
 	THE_END: {printf("and so it is\n");}	
-	
+	printf("this is executed tho\n");
 }
 
